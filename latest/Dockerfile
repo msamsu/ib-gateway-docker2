@@ -24,11 +24,11 @@ RUN apt-get install --no-install-recommends --yes \
   ca-certificates \
   unzip
 
-WORKDIR /tmp/setup
+COPY /opt/ib-gateway-binaries/ibgateway-${IB_GATEWAY_VERSION}-standalone-linux-x64.sh /tmp/setup/
+COPY /opt/ib-gateway-binaries/ibgateway-${IB_GATEWAY_VERSION}-standalone-linux-x64.sh.sha256 /tmp/setup/
+COPY /opt/ib-gateway-binaries/IBCLinux-${IBC_VERSION}.zip /tmp/setup/
 
-COPY /opt/ib-gateway-binaries/ibgateway-${IB_GATEWAY_VERSION}-standalone-linux-x64.sh .
-COPY /opt/ib-gateway-binaries/ibgateway-${IB_GATEWAY_VERSION}-standalone-linux-x64.sh.sha256 .
-COPY /opt/ib-gateway-binaries/IBCLinux-${IBC_VERSION}.zip .
+WORKDIR /tmp/setup
 
 RUN sha256sum --check ./ibgateway-${IB_GATEWAY_VERSION}-standalone-linux-x64.sh.sha256
 RUN chmod a+x ./ibgateway-${IB_GATEWAY_VERSION}-standalone-linux-x64.sh
