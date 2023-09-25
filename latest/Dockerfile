@@ -26,9 +26,9 @@ RUN apt-get install --no-install-recommends --yes \
 
 WORKDIR /tmp/setup
 
-COPY ibgateway-${IB_GATEWAY_VERSION}-standalone-linux-x64.sh /tmp/setup/
-COPY ibgateway-${IB_GATEWAY_VERSION}-standalone-linux-x64.sh.sha256 /tmp/setup/
-COPY IBCLinux-${IBC_VERSION}.zip /tmp/setup/
+COPY ibgateway-${IB_GATEWAY_VERSION}-standalone-linux-x64.sh .
+COPY ibgateway-${IB_GATEWAY_VERSION}-standalone-linux-x64.sh.sha256 .
+COPY IBCLinux-${IBC_VERSION}.zip .
 
 RUN sha256sum --check ./ibgateway-${IB_GATEWAY_VERSION}-standalone-linux-x64.sh.sha256
 RUN chmod a+x ./ibgateway-${IB_GATEWAY_VERSION}-standalone-linux-x64.sh
