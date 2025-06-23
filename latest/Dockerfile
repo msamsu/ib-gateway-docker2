@@ -68,6 +68,7 @@ RUN apt-get update -y \
       socat \
       x11vnc \
       libasound2 \
+      libtoolkit \
   && rm -rf /var/lib/apt/lists/*
 
 # Copy files
