@@ -67,6 +67,7 @@ RUN apt-get install --no-install-recommends --yes \
   libgtk2.0-bin \
   socat \
   x11vnc \
+  libasound2 \
   && rm -rf /var/lib/apt/lists/*
 
 # Copy files
