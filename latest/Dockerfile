@@ -56,18 +56,18 @@ ENV IB_GATEWAY_VERSION=${IB_GATEWAY_VERSION}
 WORKDIR /root
 
 # Prepare system
-RUN apt-get update -y
-RUN apt-get install --no-install-recommends --yes \
-  gettext \
-  xvfb \
-  libxslt-dev \
-  libxrender1 \
-  libxtst6 \
-  libxi6 \
-  libgtk2.0-bin \
-  socat \
-  x11vnc \
-  libasound2 \
+RUN apt-get update -y \
+  && apt-get install --no-install-recommends --yes \
+      gettext \
+      xvfb \
+      libxslt-dev \
+      libxrender1 \
+      libxtst6 \
+      libxi6 \
+      libgtk2.0-bin \
+      socat \
+      x11vnc \
+      libasound2 \
   && rm -rf /var/lib/apt/lists/*
 
 # Copy files
